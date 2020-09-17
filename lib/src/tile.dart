@@ -366,10 +366,10 @@ class _TimelinePainter extends CustomPainter {
     LineStyle beforeLineStyle,
     LineStyle afterLineStyle,
   })  : beforeLinePaint = Paint()
-          ..color = Colors.blue
+          ..color = beforeLineStyle.color
           ..strokeWidth = beforeLineStyle.thickness,
         afterLinePaint = Paint()
-          ..color = Colors.purple
+          ..color = afterLineStyle.color
           ..strokeWidth = afterLineStyle.thickness,
         indicatorPaint =
             !paintIndicator ? null : (Paint()..color = indicatorStyle.color),
