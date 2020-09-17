@@ -369,7 +369,7 @@ class _TimelinePainter extends CustomPainter {
           ..color = beforeLineStyle.color
           ..strokeWidth = beforeLineStyle.thickness,
         afterLinePaint = Paint()
-          ..color = Colors.purple
+          ..color = afterLineStyle.color
           ..strokeWidth = afterLineStyle.thickness,
         indicatorPaint =
             !paintIndicator ? null : (Paint()..color = indicatorStyle.color),
@@ -571,7 +571,7 @@ class _TimelinePainter extends CustomPainter {
         ? Offset(centerAxis, 0)
         : Offset(0, centerAxis);
     final endTopLine = axis == TimelineAxis.vertical
-        ? Offset(centerAxis, position.firstSpace.end)
+        ? Offset(centerAxis, position.firstSpace.end - 8)
         : Offset(position.firstSpace.end, centerAxis);
 
     final lineSize =
@@ -583,12 +583,11 @@ class _TimelinePainter extends CustomPainter {
   }
 
   void _drawAfterLine(Canvas canvas, double centerAxis, AxisPosition position) {
-    print('drawing');
     final beginBottomLine = axis == TimelineAxis.vertical
-        ? Offset(centerAxis, position.secondSpace.start)
+        ? Offset(centerAxis, position.secondSpace.start + 8)
         : Offset(position.secondSpace.start, centerAxis);
     final endBottomLine = axis == TimelineAxis.vertical
-        ? Offset(centerAxis, position.secondSpace.end - 8)
+        ? Offset(centerAxis, position.secondSpace.end)
         : Offset(position.secondSpace.end, centerAxis);
 
     final lineSize = axis == TimelineAxis.vertical
