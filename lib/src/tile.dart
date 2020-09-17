@@ -567,10 +567,8 @@ class _TimelinePainter extends CustomPainter {
 
   void _drawBeforeLine(
       Canvas canvas, double centerAxis, AxisPosition position) {
-    print('entrei before');
-
     final beginTopLine = axis == TimelineAxis.vertical
-        ? Offset(centerAxis, 0)
+        ? Offset(centerAxis, 8)
         : Offset(0, centerAxis);
     final endTopLine = axis == TimelineAxis.vertical
         ? Offset(centerAxis, position.firstSpace.end - 8)
@@ -585,8 +583,6 @@ class _TimelinePainter extends CustomPainter {
   }
 
   void _drawAfterLine(Canvas canvas, double centerAxis, AxisPosition position) {
-    print('entrei after');
-
     final beginBottomLine = axis == TimelineAxis.vertical
         ? Offset(centerAxis, position.secondSpace.start + 8)
         : Offset(position.secondSpace.start, centerAxis);
