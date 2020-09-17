@@ -591,7 +591,7 @@ class _TimelinePainter extends CustomPainter {
         ? Offset(centerAxis, position.secondSpace.start + 8)
         : Offset(position.secondSpace.start, centerAxis);
     final endBottomLine = axis == TimelineAxis.vertical
-        ? Offset(centerAxis, position.secondSpace.end)
+        ? Offset(centerAxis, position.secondSpace.end - 8)
         : Offset(position.secondSpace.end, centerAxis);
 
     final lineSize = axis == TimelineAxis.vertical
