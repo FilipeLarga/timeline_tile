@@ -583,11 +583,12 @@ class _TimelinePainter extends CustomPainter {
   }
 
   void _drawAfterLine(Canvas canvas, double centerAxis, AxisPosition position) {
+    print('drawing');
     final beginBottomLine = axis == TimelineAxis.vertical
         ? Offset(centerAxis, position.secondSpace.start)
         : Offset(position.secondSpace.start, centerAxis);
     final endBottomLine = axis == TimelineAxis.vertical
-        ? Offset(centerAxis, position.secondSpace.end)
+        ? Offset(centerAxis, position.secondSpace.end - 8)
         : Offset(position.secondSpace.end, centerAxis);
 
     final lineSize = axis == TimelineAxis.vertical
